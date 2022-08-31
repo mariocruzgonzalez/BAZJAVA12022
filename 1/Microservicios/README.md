@@ -187,7 +187,7 @@ docker rm trusting_beaver modest_khayyam lucid_greider
 ### 15. Ejecutamos el contenedor asignandole un nombre y un parametro de autolimpieza
 
 ``` 
-docker run --rm -d -p 8080:5000 --name springboot-server java-docker
+docker run --rm -d -p 8080:5000 --name python-server python-docker
 ```
 
 En este punto podemos detener el contenedor
@@ -324,6 +324,12 @@ Detener completamente los servicios y remover la data en los volumenes:
 
 ``` 
 docker compose down --volumes
+```
+
+Indicar el archivo que usará docker y eliminar los contenedores asociados a dicho compose, adicional, de no encontrarse contenedores en ejecución enviar mensaje:
+
+``` 
+docker-compose -f docker-compose.yml rm -f || echo "no containers to remove"
 ```
 
 ### Desafio, recordando la sesion pasada. 
